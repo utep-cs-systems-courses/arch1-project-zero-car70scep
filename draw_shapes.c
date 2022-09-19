@@ -10,7 +10,7 @@ void print_square(int leftCol, int size)
     int col;
     for (col = 0; col < leftCol; col++) putchar(' ');
     for (       ; col < endCol;  col++) putchar('*');
-    putchar('\n');
+    putchar('\n'); 
   }
 }
 
@@ -26,3 +26,23 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+void print_arrow(int leftCol, int size){
+  int i, j;
+  int side = leftCol - 1;
+  int endCol = side + side;
+  for (int row = 0; row <= leftCol; row++){
+    int minCol = leftCol + size - row, maxCol = leftCol + size + row;
+    int col;
+    for (col=0; col < minCol; col++) putchar(' ');
+    for (       ; col <= maxCol; col++) putchar('*');
+    putchar('\n');
+  }
+  for (int row = 0; row < side; row++){
+    int col;
+    char space [10]= "      " ;
+    printf("%s",space);
+    for (col = 0; col < side; col++) putchar(' ');
+    for (     ; col < endCol; col++) putchar('*');
+    putchar('\n');
+  }
+}
